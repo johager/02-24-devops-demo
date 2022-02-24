@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const app = express()
+app.use(express.json())
 
 const port = process.env.PORT || 4545
 // process.env.PORT to get the port from heroku's env file
