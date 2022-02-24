@@ -13,8 +13,6 @@ app.get('/', function(req,res) {
 
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.listen(port, () => { console.log(`running on port ${port}`)})
-
 const Rollbar = require('rollbar')
 const rollbar = new Rollbar({
   accessToken: '3683e4e94fd64cdcab2a3b946093a710',
@@ -39,3 +37,5 @@ app.post('/api/student', (req, res)=>{
 })
 
 app.use(rollbar.errorHandler())
+
+app.listen(port, () => { console.log(`running on port ${port}`)})
